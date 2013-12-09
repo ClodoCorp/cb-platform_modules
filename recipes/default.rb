@@ -19,6 +19,6 @@
 
 node['platform_modules']['mods'].each do |mod_hash|
   modules mod_hash[:name] do
-#    options mod_hash[:parm]
+    options mod_hash[:parm]
   end
 end
