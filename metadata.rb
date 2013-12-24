@@ -1,5 +1,6 @@
 maintainer       "Vasiliy Tolstov"
 maintainer_email "v.tolstov@selfip.ru"
+name             "platform_modules"
 license          "Apache 2.0"
 description      "Loads/Unloads individual modules via attribute or data bag metadata."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
