@@ -19,12 +19,6 @@
 
 node['platform_modules']['mods'].each do |mod_hash|
   modules mod_hash[:name] do
-    options mod_hash[:parm]
-  end
-end
-
-node['platform_modules']['mods'].each do |mod_hash|
-  modules mod_hash[:name] do
     %w{save autoload options action}.each do |attr|
       send(attr, mod_hash[attr])  if mod_hash[attr]
     end
