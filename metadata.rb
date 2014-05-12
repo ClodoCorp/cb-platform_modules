@@ -6,10 +6,9 @@ description      "Loads/Unloads individual modules via attribute or data bag met
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.0.1"
 
-supports "ubuntu"
-supports "debian"
-supports "suse"
-supports "arch"
+%w{ubuntu debian fedora gentoo arch exherbo}.each do |os|
+  supports os
+end
 
 depends "modules"
 

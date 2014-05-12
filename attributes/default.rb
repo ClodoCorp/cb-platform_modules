@@ -2,7 +2,7 @@
 # Cookbook Name:: platform_modules
 # Attributes:: default
 #
-# Copyright 2013, Vasiliy Tolstov
+# Copyright 2014, Vasiliy Tolstov
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

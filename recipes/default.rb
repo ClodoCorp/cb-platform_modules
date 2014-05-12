@@ -2,7 +2,7 @@
 # Cookbook Name:: platform_modules
 # Recipe:: default
 #
-# Copyright 2013, Opscode, Inc.
+# Copyright 2014, Vasiliy Tolstov
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,5 +20,13 @@
 node['platform_modules']['mods'].each do |mod_hash|
   modules mod_hash[:name] do
     options mod_hash[:parm]
+  end
+end
+
+node['platform_modules']['mods'].each do |mod_hash|
+  modules mod_hash[:name] do
+    %w{save autoload options action}.each do |attr|
+      send(attr, mod_hash[attr])  if mod_hash[attr]
+    end
   end
 end
