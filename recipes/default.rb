@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "modules"
+
 node['platform_modules']['mods'].each do |mod_hash|
   modules mod_hash[:name] do
     %w{save autoload options action}.each do |attr|
