@@ -1,2 +1,0 @@
-cookbook-platform_modules
-=========================
