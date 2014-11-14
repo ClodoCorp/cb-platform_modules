@@ -32,8 +32,14 @@ if !node['platform_modules'].nil?  && !node['platform_modules']['mods'].nil?
   when Hash,Mash
     node['platform_modules']['mods'].each do |name, opts|
       modules name do
-        %w{save autoload options action}.each do |attr|
-          send(attr, opts[attr]) if opts[attr]
+        %w{save autoload options action actions}.each do |attr|
+          if opts[attr]
+            if attr == "actions"
+              send("action", opts[attr].values)
+            else
+              send(attr, opts[attr])
+            end
+          end
         end
       end
     end
